@@ -8,6 +8,10 @@
 
 本文档提供一套完整的前后端部署流程（Ubuntu 20.04 + ROS Noetic）。
 
+## 相关开源项目
+
+- `dual_arm`：双臂机器人相关开源项目：`https://github.com/huayan-robotics/dual_arm`
+
 ## 1. 系统架构
 
 运行链路如下：
