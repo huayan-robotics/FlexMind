@@ -1,0 +1,41 @@
+<launch>
+  <!-- 相机设备配置 -->
+  <rosparam param="camera_monitor_topics">
+    "left_hand": "/camera/left_hand/color/camera_info"
+    "right_hand": "/camera/right_hand/color/camera_info"
+    "head": "/camera/color/camera_info"
+  </rosparam>
+  
+  <!-- 机器人设备配置 -->
+  <rosparam param="robot_monitor_topics">
+    "robots": "/robot/state"
+  </rosparam>
+  
+  <!-- 夹爪设备配置 -->
+  <rosparam param="gripper_monitor_topics">
+    "grippers": "/gripper/state"
+  </rosparam>
+
+  <!-- 遥操设备配置 -->
+  <rosparam param="remote_monitor_topics">
+    "remote_control": "/remote_control/status"
+  </rosparam>
+
+  <!-- 硬件监控节点 -->
+  <node name="hardware_monitor" pkg="fleximind_hardware" type="hardware_monitor_node.py" output="screen">
+    <!-- 容错配置 -->
+    <rosparam param="fault_tolerance">
+      camera: 0    <!-- 相机类型容错 -->
+      robot: 0     <!-- 机器人类型容错 -->
+      gripper: 0   <!-- 夹爪类型容错 -->
+      remote: 0   <!-- 遥操设备容错-->
+    </rosparam>
+  </node>
+
+    <!-- 安全监控节点 -->
+  <node name="joint_safety_monitor" pkg="fleximind_hardware" type="safety_monitor.py" output="screen">
+    <!-- 加载安全监控参数文件 -->
+    <rosparam command="load" file="$(find fleximind_hardware)/config/safety_monitor.yaml" />
+  </node>
+
+</launch>

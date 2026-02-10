@@ -1,0 +1,9 @@
+data/bags
+servo_logs
+
+build
+devel
+install
+
+venv*
+__pycache__

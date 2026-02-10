@@ -1,0 +1,5 @@
+string[] file_paths
+---
+bool success
+string message
+string[] export_path

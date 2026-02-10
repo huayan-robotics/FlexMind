@@ -1,0 +1,7 @@
+<launch>
+    <!-- 启动节点，并为fleximind_robot_node加载其私有参数部分 -->
+    <node pkg="fleximind_robot" type="fleximind_robot_node.py" name="fleximind_robot_node" output="screen">
+        <!-- 这里‘fleximind_robot_node’下的参数会自动加载到/fleximind_robot_node的私有空间 -->
+        <rosparam command="load" file="$(find fleximind_robot)/config/config.yaml"/>
+    </node>
+</launch>

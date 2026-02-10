@@ -1,0 +1,7 @@
+# 请求部分
+string ip
+int64 port
+---
+# 响应部分
+int64 code
+string message

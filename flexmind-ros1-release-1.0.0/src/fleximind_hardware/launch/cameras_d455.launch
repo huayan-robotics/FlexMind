@@ -1,0 +1,30 @@
+<launch>
+  <!-- 1. 加载相机配置参数 -->
+  <arg name="left_hand/serial_no" default="309122300717" />
+  <arg name="left_hand/color_width" default="640" />
+  <arg name="left_hand/color_height" default="480" />
+  <arg name="left_hand/enable_depth" default="true" />
+  <arg name="left_hand/align_depth" default="false" />
+  <arg name="left_hand/enable_sync" default="true" />
+  <arg name="left_hand/color_fps" default="15" />
+  <arg name="left_hand/depth_fps" default="15" />
+  
+  <!-- ===================== Realsense相机组 ===================== -->
+  <!-- 左手相机 -->
+  <group ns="camera">
+    <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
+      <arg name="serial_no"             value="$(arg left_hand/serial_no)"/>
+      <arg name="color_width"             value="$(arg left_hand/color_width)"/>
+      <arg name="color_height"             value="$(arg left_hand/color_height)"/>
+      <arg name="enable_depth"             value="$(arg left_hand/enable_depth)"/>
+      <arg name="align_depth"             value="$(arg left_hand/align_depth)"/>
+      <arg name="enable_sync"             value="$(arg left_hand/enable_sync)"/>
+      <arg name="color_fps"             value="$(arg left_hand/color_fps)"/>
+      <arg name="stereo_module/exposure/1"  default="1000"/>
+      <arg name="stereo_module/gain/1"      default="6"/>
+      <arg name="stereo_module/exposure/2"  default="1"/>
+      <arg name="stereo_module/gain/2"      default="6"/>
+    </include>
+  </group>
+
+</launch>

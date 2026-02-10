@@ -1,0 +1,5 @@
+# 空请求
+---
+bool success
+string message
+bool locked  # 返回切换后的状态

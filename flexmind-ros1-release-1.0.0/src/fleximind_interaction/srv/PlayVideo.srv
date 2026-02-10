@@ -1,0 +1,4 @@
+string video_path
+---
+bool success
+string message

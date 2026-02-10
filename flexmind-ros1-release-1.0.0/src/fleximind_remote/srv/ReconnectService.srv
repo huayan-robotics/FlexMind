@@ -1,0 +1,6 @@
+# 请求部分
+string id  # 可选请求ID(客户端可指定或自动生成)
+---
+# 响应部分
+bool result  # 执行结果
+int32 code   # 状态码

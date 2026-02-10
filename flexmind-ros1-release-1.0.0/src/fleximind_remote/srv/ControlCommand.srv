@@ -1,0 +1,6 @@
+# 控制命令请求 (客户端发送)
+string command  # 指令字符串，如 "lock_gello", "start_sync" 等
+---
+# 服务响应 (服务端返回)
+bool success    # 命令是否执行成功
+string message  # 执行结果描述信息

@@ -1,0 +1,15 @@
+<launch>
+    <!-- 主交互服务节点 -->
+    <node 
+        pkg="fleximind_interaction" 
+        type="main_interaction.py" 
+        name="main_interaction" 
+        output="screen" />
+
+    <!-- 启动rosbridge WebSocket服务 -->
+    <include file="$(find fleximind_interaction)/launch/rosbridge.launch" />
+
+    <!-- 启动web video server服务 -->
+    <include file="$(find fleximind_interaction)/launch/web_video_server.launch" />
+
+</launch>

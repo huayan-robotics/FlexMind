@@ -1,0 +1,7 @@
+<launch>
+    <!-- 启动节点，并为fleximind_gripper_node加载其私有参数部分 -->
+    <node pkg="fleximind_gripper" type="gripper_node.py" name="fleximind_gripper_node" output="screen">
+        <!-- 这里‘fleximind_gripper_node’下的参数会自动加载到/fleximind_gripper_node的私有空间 -->
+        <rosparam command="load" file="$(find fleximind_gripper)/config/gripper_config.yaml"/>
+    </node>
+</launch>

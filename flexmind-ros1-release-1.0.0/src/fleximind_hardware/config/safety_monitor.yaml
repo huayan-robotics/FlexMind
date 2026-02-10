@@ -1,0 +1,33 @@
+# 全局参数：区分左右臂（left_arm_xxx / right_arm_xxx）
+# 机械臂基础配置
+left_arm_boxid: 0          # 左臂设备ID
+left_arm_ip: "192.168.1.20" # 左臂IP地址
+left_arm_port: 10003          # 左臂端口
+left_arm_robot_id: 0        # 左臂机器人ID
+right_arm_boxid: 1          # 右臂设备ID
+right_arm_ip: "192.168.1.30" # 右臂IP地址
+right_arm_port: 10003         # 右臂端口
+right_arm_robot_id: 0       # 右臂机器人ID
+
+# 关节限制参数（6轴机械臂，每个关节对应一个阈值）
+left_arm_max_joint_velocity: [1500, 1500, 1500, 1500, 1500, 1500]      # 左臂各关节最大速度
+left_arm_max_joint_acceleration: [20000, 20000, 20000, 20000, 20000, 20000]  # 左臂各关节最大加速度
+left_arm_max_joint_jerk: [100000, 100000, 100000, 100000, 100000, 100000]    # 左臂各关节最大加加速度
+right_arm_max_joint_velocity: [1500, 1500, 1500, 1500, 1500, 1500]     # 右臂各关节最大速度
+right_arm_max_joint_acceleration: [20000, 20000, 20000, 20000, 20000, 20000] # 右臂各关节最大加速度
+right_arm_max_joint_jerk: [100000, 100000, 100000, 100000, 100000, 100000]   # 右臂各关节最大加加速度
+
+# 系统监控参数（左右臂共用）
+cpu_threshold: 95           # CPU使用率阈值（%）
+cpu_overload_duration: 10.0  # CPU持续超载触发急停的时间（秒）
+check_interval: 0.05        # CPU安全检查间隔
+joint_count: 6              # 机械臂关节数
+
+#监控的关节列表
+monitored_joints: ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6']
+
+#30hz频率监控参数
+min_time_interval: 0.03
+min_position_change: 0.5
+history_length: 5
+monitor_rate: 30

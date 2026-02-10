@@ -1,0 +1,12 @@
+# 目标：要记录的话题列表和持续时间
+string[] topics
+string[] topics_type
+float32 duration  # 单位：秒，0表示无限期记录
+---
+# 结果：记录的文件路径和状态
+string bag_path
+bool success
+---
+# 反馈：当前记录进度
+float32 progress  # 0-100百分比
+float32 elapsed_time

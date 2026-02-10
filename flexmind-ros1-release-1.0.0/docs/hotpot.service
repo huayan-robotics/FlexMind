@@ -1,0 +1,13 @@
+[Unit]
+Description=Hotspot Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/nmcli dev wifi hotspot con-name "Fleximind" password "huayan2025" ifname wlan0
+ExecStop=/usr/bin/nmcli con down "Fleximind"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

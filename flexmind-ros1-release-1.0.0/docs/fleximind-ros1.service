@@ -1,0 +1,16 @@
+[Unit]
+Description=Fleximind Service
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=robot
+Group=robot
+WorkingDirectory=/home/robot/fleximind-ros1
+ExecStart=/usr/bin/bash /home/robot/fleximind-ros1/run.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

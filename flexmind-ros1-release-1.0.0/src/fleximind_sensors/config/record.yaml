@@ -1,0 +1,36 @@
+# 录制配置参数
+record_bag:
+  test_mode: false
+  storage_format: "bag"
+  output_dir: "/home/robot/fleximind-ros1/data/bags"
+  topics: 
+    - /camera/left_hand/color/image_raw
+    - /camera/right_hand/color/image_raw
+    - /camera/color/image_raw
+    - /camera/depth/image_raw
+    - robot/data/action/left_arm
+    - robot/data/action/right_arm
+    - robot/data/observation/left_arm
+    - robot/data/observation/right_arm
+    # - /robot/data/observation/left_gripper
+    # - /robot/data/observation/right_gripper
+    # - /robot/data/action/left_gripper
+    # - /robot/data/action/right_gripper
+
+
+  topics_type:
+    - sensor_msgs/Image
+    - sensor_msgs/Image
+    - sensor_msgs/Image
+    - sensor_msgs/Image
+    - sensor_msgs/JointState
+    - sensor_msgs/JointState
+    - sensor_msgs/JointState
+    - sensor_msgs/JointState
+    # - fleximind_gripper/GripperStatus
+    # - fleximind_gripper/GripperStatus
+    # - fleximind_gripper/GripperStatus
+    # - fleximind_gripper/GripperStatus
+    # - sensor_msgs/Image
+    # - sensor_msgs/Image
+  duration: 0.0  # 录制时长(秒), 0为循环

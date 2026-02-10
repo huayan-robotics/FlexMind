@@ -1,0 +1,9 @@
+<launch>
+  <!-- gello遥操节点 -->
+  <include file="$(find fleximind_remote)/launch/remote_control.launch" />
+
+  <!-- 遥操系统节点 -->
+  <node name="remote_system" pkg="fleximind_remote" type="remote_system_node.py" output="screen">
+  </node>
+
+</launch>

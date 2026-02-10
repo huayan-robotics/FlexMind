@@ -1,0 +1,6 @@
+# 请求参数：目标目录路径
+string target_directory # 可为空
+---
+# 响应参数
+bool success
+PlaybackItem[] playback_list  # 自定义消息类型

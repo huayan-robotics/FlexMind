@@ -1,0 +1,10 @@
+std_msgs/Header header
+ConnectionStatus[] camera_status
+ConnectionStatus[] robot_status
+ConnectionStatus[] gripper_status
+ConnectionStatus[] remote_status
+int32 camera_error_num
+int32 robot_error_num
+int32 gripper_error_num
+int32 remote_error_num
+bool overall_status

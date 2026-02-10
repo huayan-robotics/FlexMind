@@ -1,0 +1,90 @@
+<launch>
+  <!-- 1. 加载相机配置参数 -->
+  <arg name="left_hand/serial_no" default="230322275636" />
+  <arg name="left_hand/color_width" default="640" />
+  <arg name="left_hand/color_height" default="480" />
+  <arg name="left_hand/enable_depth" default="false" />
+  <arg name="left_hand/align_depth" default="false" />
+  <arg name="left_hand/enable_sync" default="true" />
+  <arg name="left_hand/color_fps" default="30" />
+  
+  <!-- right_hand -->
+  <arg name="right_hand/serial_no" default="230322271200" />
+  <arg name="right_hand/color_width" default="640" />
+  <arg name="right_hand/color_height" default="480" />
+  <arg name="right_hand/enable_depth" default="false" />
+  <arg name="right_hand/align_depth" default="false" />
+  <arg name="right_hand/enable_sync" default="true" />
+  <arg name="right_hand/color_fps" default="30" />
+  
+  <!-- head -->
+  <arg name="head/enumerate_net_device" default="true" />
+  <arg name="head/ip_address" default="192.168.1.10" />
+  <arg name="head/color_width" default="640" />
+  <arg name="head/color_height" default="480" />
+  <arg name="head/enable_color" default="true" />
+  <arg name="head/depth_width" default="640" />
+  <arg name="head/depth_height" default="480" />
+  <arg name="head/enable_depth" default="true" />
+  <arg name="head/depth_registration" default="true" />
+  <arg name="head/enable_color_auto_exposure" default="true" />
+  <arg name="head/enable_color_auto_white_balance" default="true" />
+  <arg name="head/color_fps" default="30" />
+  <arg name="head/depth_fps" default="30" />
+
+  <!-- ===================== Realsense相机组 ===================== -->
+  <!-- 左手相机 -->
+  <group ns="camera/left_hand">
+    <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
+      <arg name="serial_no"             value="$(arg left_hand/serial_no)"/>
+      <arg name="color_width"             value="$(arg left_hand/color_width)"/>
+      <arg name="color_height"             value="$(arg left_hand/color_height)"/>
+      <arg name="enable_depth"             value="$(arg left_hand/enable_depth)"/>
+      <arg name="align_depth"             value="$(arg left_hand/align_depth)"/>
+      <arg name="enable_sync"             value="$(arg left_hand/enable_sync)"/>
+      <arg name="color_fps"             value="$(arg left_hand/color_fps)"/>
+      <arg name="stereo_module/exposure/1"  default="1500"/>
+      <arg name="stereo_module/gain/1"      default="6"/>
+    </include>
+  </group>
+
+  <!-- 右手相机 -->
+  <group ns="camera/right_hand">
+    <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
+      <arg name="serial_no"             value="$(arg right_hand/serial_no)"/>
+      <arg name="color_width"             value="$(arg right_hand/color_width)"/>
+      <arg name="color_height"             value="$(arg right_hand/color_height)"/>
+      <arg name="enable_depth"             value="$(arg right_hand/enable_depth)"/>
+      <arg name="align_depth"             value="$(arg right_hand/align_depth)"/>
+      <arg name="enable_sync"             value="$(arg right_hand/enable_sync)"/>
+      <arg name="color_fps"             value="$(arg right_hand/color_fps)"/>
+      <arg name="stereo_module/exposure/1"  default="1500"/>
+      <arg name="stereo_module/gain/1"      default="6"/>
+    </include>
+  </group>
+
+  <!-- ===================== Orbbec相机组 ===================== -->
+  <!-- 头部相机 -->
+  <group ns="camera/head">
+    <arg name="camera_name" default="ob_camera"/>
+    <arg name="3d_sensor" default="gemini_330_series"/>
+    <arg name="device_num" default="1"/>
+    <include file="$(find orbbec_camera)/launch/$(arg 3d_sensor).launch">
+        <arg name="enumerate_net_device" value="$(arg head/enumerate_net_device)"/>
+        <arg name="ip_address" value="$(arg head/ip_address)"/>
+        <arg name="port" value="8090"/>
+        <arg name="enable_color" value="$(arg head/enable_color)"/>
+        <arg name="color_width" value="$(arg head/color_width)"/>
+        <arg name="color_height" value="$(arg head/color_height)"/>
+        <arg name="enable_depth" value="$(arg head/enable_depth)"/>
+        <arg name="depth_width" value="$(arg head/depth_width)"/>
+        <arg name="depth_height" value="$(arg head/depth_height)"/>
+        <arg name="depth_registration" value="$(arg head/depth_registration)"/>
+        <arg name="enable_color_auto_exposure" value="$(arg head/enable_color_auto_exposure)"/>
+        <arg name="enable_color_auto_white_balance" value="$(arg head/enable_color_auto_white_balance)"/>
+        <arg name="color_fps" value="$(arg head/color_fps)"/>
+        <arg name="depth_fps" value="$(arg head/depth_fps)"/>
+    </include>
+  </group>
+
+</launch>

@@ -1,0 +1,20 @@
+<!-- bringup.launch 顶层架构 -->
+<launch>
+  <!-- 1. 动态获取虚拟环境路径 -->
+  <arg name="venv_path" default="$(find fleximind_bringup)/../../venv38" /> <!-- 假设venv在工程根目录下 -->
+  
+  <!-- 2. 全局注入环境变量 -->
+  <env name="PATH" value="$(arg venv_path)/bin:$(env PATH)" />
+  <env name="PYTHONPATH" value="$(arg venv_path)/lib/python3.8/site-packages:$(env PYTHONPATH)" />
+  <env name="ROSCONSOLE_FORMAT" value="[${severity}] [${time}] [${node}] ${message}" />
+
+  <!-- 3. 模块化启动子包 -->
+  <include file="$(find fleximind_interaction)/launch/main.launch" />
+  <include file="$(find fleximind_hardware)/launch/cameras.launch" />
+  <include file="$(find fleximind_hardware)/launch/hardware_monitor.launch" />
+  <include file="$(find fleximind_sensors)/launch/recorder.launch" />
+  <include file="$(find fleximind_remote)/launch/remote_system.launch" />
+  <include file="$(find fleximind_gripper)/launch/fleximind_gripper.launch" />
+  <include file="$(find fleximind_robot)/launch/fleximind_robot.launch" />
+  <include file="$(find fleximind_hardware)/launch/config_manager.launch" />
+</launch>

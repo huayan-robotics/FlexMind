@@ -1,0 +1,19 @@
+<launch>
+    <!-- 加载录制参数 -->
+    <rosparam command="load" file="$(find fleximind_sensors)/config/record.yaml" />
+
+    <!-- 记录器服务端节点 -->
+    <node 
+        pkg="fleximind_sensors" 
+        type="recorder_server.py" 
+        name="recorder_server" 
+        output="screen" />
+
+    <!-- 记录器客户端节点 -->
+    <!-- <node 
+        pkg="fleximind_sensors" 
+        type="recorder_client.py" 
+        name="recorder_client" 
+        output="screen" /> -->
+
+</launch>

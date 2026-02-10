@@ -1,0 +1,16 @@
+{
+    "cmake.sourceDirectory": "./src",
+    "python.analysis.extraPaths": [
+        "./src/fleximind_bringup/src",
+        "./src/fleximind_hardware/src",
+        "./src/fleximind_interaction/src",
+        "./src/fleximind_remote/src",
+        "./src/fleximind_sensors/src",
+        "./src/fleximind_gripper/src",
+        "./src/fleximind_robot/src",
+        "./src/**/src",
+        "./devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+    ]
+
+}

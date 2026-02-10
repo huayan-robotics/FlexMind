@@ -1,0 +1,14 @@
+<launch>
+    <node name="config_manager" pkg="fleximind_hardware" type="config_manager.py" output="screen">
+        <!-- 设置ROS工作空间路径 -->
+        <param name="workspace_path" value="/home/robot/fleximind-ros1" />
+        
+        <!-- 可选：可以单独设置每个配置文件的路径 -->
+        <!-- 
+        <param name="gripper_config_path" value="/home/robot/fleximind-ros1/src/fleximind_gripper/config/gripper_config.yaml" />
+        <param name="remote_config_path" value="/home/robot/fleximind-ros1/src/fleximind_remote/config/remote.yaml" />
+        <param name="robot_config_path" value="/home/robot/fleximind-ros1/src/fleximind_robot/config/config.yaml" />
+        <param name="record_config_path" value="/home/robot/fleximind-ros1/src/fleximind_sensors/config/record.yaml" />
+        -->
+    </node>
+</launch>

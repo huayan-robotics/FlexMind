@@ -1,0 +1,11 @@
+# Goal definition (客户端发送的目标，例如方向和时间)
+
+---
+# Result definition (最终结果)
+int64 code
+string message
+
+---
+# Feedback definition (持续反馈)
+int64 code
+string message

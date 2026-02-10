@@ -1,0 +1,85 @@
+arm_type: bimanual
+gripper_boarder_ratio: 1.0
+gripper_boarder_tolerance: 0.1
+gripper_max_value: 1000
+gripper_reset: true
+hostname: 127.0.0.1
+hz: 100
+io:
+  left_record: 1
+  left_stop: 0
+  right_lock: 1
+  right_stop: 0
+left_arm:
+  calibrate_joints:
+  - 0
+  - 0
+  - -1.57
+  - 0
+  - -1.57
+  - 1.05
+  gripper_angle: 15
+  gripper_config:
+  - 6
+  - 253
+  - 238
+  joint_ids:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  joint_offsets:
+  - 4
+  - 3
+  - 4
+  - 2
+  - 1
+  - 1
+  joint_signs:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  port: /dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FTAA08QE-if00-port0
+  start_joints: []
+right_arm:
+  calibrate_joints:
+  - 3.14
+  - 0
+  - 1.57
+  - 0
+  - 1.57
+  - -1.92
+  gripper_angle: 20
+  gripper_config:
+  - 6
+  - 78
+  - 58
+  joint_ids:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  joint_offsets:
+  - 0
+  - 3
+  - 0
+  - 4
+  - 2
+  - 1
+  joint_signs:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  port: /dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FTAA08SM-if00-port0
+  start_joints: []
+robot_port: 6001

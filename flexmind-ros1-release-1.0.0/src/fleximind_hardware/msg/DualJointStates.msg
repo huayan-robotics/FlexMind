@@ -1,0 +1,4 @@
+std_msgs/Header header
+sensor_msgs/JointState left_joints
+sensor_msgs/JointState right_joints
+bool is_gripper_held

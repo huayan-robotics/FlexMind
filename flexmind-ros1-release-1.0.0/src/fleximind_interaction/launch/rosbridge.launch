@@ -1,0 +1,15 @@
+<!-- rosbridge.launch -->
+<launch>
+  <!-- 启动rosbridge WebSocket服务 -->
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+    <!-- 可选：自定义端口号（默认9090） -->
+    <arg name="port" value="9090" />
+    <!-- 允许外部IP访问（默认仅本地） -->
+    <arg name="address" value="" />  
+    <!-- SSL加密 -->
+    <arg name="ssl" default="false" />
+    <!-- 压缩信息 -->
+    <arg name="use_compression" default="false" />
+
+  </include>
+</launch>

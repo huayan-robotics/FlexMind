@@ -1,0 +1,42 @@
+# gripper_config.yaml
+# 夹爪配置文件，支持多个夹爪参数
+control_timer_period: 0.2     # 夹爪控制最低间隔 0.2
+reader_timer_period: 0.4     # 夹爪读取最优间隔 0.4
+reconnect_attempts: 0
+reconnect_delay: 2.0  # 重连延迟秒数
+
+fleximind_gripper_node:
+  - gripper_id: 1
+    gripper_type: "DHPGE"
+    connect_type: "ModbusRTU"
+    uart_port: "End"
+    slave_id: 1
+    baud_rate: 115200
+    data_bit: 8
+    stop_bit: 1
+    parity: "N"
+    connect_mode: 1
+    gripper_name: "left_gripper"
+    ip: "192.168.1.30"
+    port: 10003
+    box_id: 1
+    speed: 100
+    force: 100
+    range: [1000, 0]
+  - gripper_id: 1
+    gripper_type: "DHPGE"
+    connect_type: "ModbusRTU"
+    uart_port: "End"
+    slave_id: 1
+    baud_rate: 115200
+    data_bit: 8
+    stop_bit: 1
+    parity: "N"
+    connect_mode: 1
+    gripper_name: "right_gripper"
+    ip: "192.168.1.20"
+    port: 10003
+    box_id: 0
+    speed: 100
+    force: 100
+    range: [1000, 0]

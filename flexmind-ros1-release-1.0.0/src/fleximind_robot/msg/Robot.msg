@@ -1,0 +1,14 @@
+int32 robotState
+bool robotEnabled
+bool robotMoving
+int32 Error_AxisID
+int32 Error_Code
+float64[6] joint_positions
+float64[6] eef_positions
+int32[8] BoxCI
+int32[8] BoxCO
+int32[8] BoxDI
+int32[8] BoxDO
+int32[4] EndDI
+int32[4] EndDO
+string last_update

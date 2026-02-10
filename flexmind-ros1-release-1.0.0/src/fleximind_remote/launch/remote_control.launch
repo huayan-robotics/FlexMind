@@ -1,0 +1,7 @@
+<launch>
+  <!-- Gello遥感节点 -->
+  <node name="remote_control" pkg="fleximind_remote" type="remote_control_node.py" output="screen">
+      <rosparam command="load" file="$(find fleximind_remote)/config/remote.yaml" />
+  </node>
+
+</launch>

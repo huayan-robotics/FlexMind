@@ -1,0 +1,6 @@
+# 请求部分
+bool is_open
+---
+# 响应部分
+int64 code
+string message

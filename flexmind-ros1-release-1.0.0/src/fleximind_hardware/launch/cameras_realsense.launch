@@ -1,0 +1,76 @@
+<launch>
+  <!-- 1. 加载相机配置参数 -->
+  <arg name="left_hand/serial_no" default="218622271708" />
+  <arg name="left_hand/color_width" default="640" />
+  <arg name="left_hand/color_height" default="480" />
+  <arg name="left_hand/enable_depth" default="false" />
+  <arg name="left_hand/align_depth" default="false" />
+  <arg name="left_hand/enable_sync" default="true" />
+  <arg name="left_hand/color_fps" default="15" />
+  
+  <!-- right_hand -->
+  <arg name="right_hand/serial_no" default="218722270990" />
+  <arg name="right_hand/color_width" default="640" />
+  <arg name="right_hand/color_height" default="480" />
+  <arg name="right_hand/enable_depth" default="false" />
+  <arg name="right_hand/align_depth" default="false" />
+  <arg name="right_hand/enable_sync" default="true" />
+  <arg name="right_hand/color_fps" default="15" />
+  
+  <!-- head -->
+  <arg name="head/serial_no" default="239122074097" />
+  <arg name="head/color_width" default="640" />
+  <arg name="head/color_height" default="480" />
+  <arg name="head/enable_depth" default="true" />
+  <arg name="head/depth_width" default="640" />
+  <arg name="head/depth_height" default="480" />
+  <arg name="head/align_depth" default="true" />
+  <arg name="head/enable_sync" default="true" />
+  <arg name="head/color_fps" default="15" />
+  <arg name="head/depth_fps" default="15" />
+
+
+  <!-- ===================== Realsense相机组 ===================== -->
+  <!-- 左手相机 -->
+  <group ns="camera/left_hand">
+    <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
+      <arg name="serial_no"             value="$(arg left_hand/serial_no)"/>
+      <arg name="color_width"             value="$(arg left_hand/color_width)"/>
+      <arg name="color_height"             value="$(arg left_hand/color_height)"/>
+      <arg name="enable_depth"             value="$(arg left_hand/enable_depth)"/>
+      <arg name="align_depth"             value="$(arg left_hand/align_depth)"/>
+      <arg name="enable_sync"             value="$(arg left_hand/enable_sync)"/>
+      <arg name="color_fps"             value="$(arg left_hand/color_fps)"/>
+    </include>
+  </group>
+
+  <!-- 右手相机 -->
+  <group ns="camera/right_hand">
+    <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
+      <arg name="serial_no"             value="$(arg right_hand/serial_no)"/>
+      <arg name="color_width"             value="$(arg right_hand/color_width)"/>
+      <arg name="color_height"             value="$(arg right_hand/color_height)"/>
+      <arg name="enable_depth"             value="$(arg right_hand/enable_depth)"/>
+      <arg name="align_depth"             value="$(arg right_hand/align_depth)"/>
+      <arg name="enable_sync"             value="$(arg right_hand/enable_sync)"/>
+      <arg name="color_fps"             value="$(arg right_hand/color_fps)"/>
+    </include>
+  </group>
+
+  <!-- 头部相机 -->
+  <group ns="camera/head">
+    <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
+      <arg name="serial_no"             value="$(arg head/serial_no)"/>
+      <arg name="color_width"             value="$(arg head/color_width)"/>
+      <arg name="color_height"             value="$(arg head/color_height)"/>
+      <arg name="depth_height"             value="$(arg head/depth_height)"/>
+      <arg name="depth_width"             value="$(arg head/depth_width)"/>
+      <arg name="enable_depth"             value="$(arg head/enable_depth)"/>
+      <arg name="align_depth"             value="$(arg head/align_depth)"/>
+      <arg name="enable_sync"             value="$(arg head/enable_sync)"/>
+      <arg name="color_fps"             value="$(arg head/color_fps)"/>
+      <arg name="depth_fps"             value="$(arg head/depth_fps)"/>
+    </include>
+  </group>
+
+</launch>

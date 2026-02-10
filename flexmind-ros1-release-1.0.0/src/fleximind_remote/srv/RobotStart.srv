@@ -1,0 +1,5 @@
+# 请求部分
+---
+# 响应部分
+int64 code
+string message

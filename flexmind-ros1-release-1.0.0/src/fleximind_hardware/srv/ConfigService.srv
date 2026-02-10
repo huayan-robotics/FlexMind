@@ -1,0 +1,8 @@
+string config_type     # "gripper", "remote", "robot", "record"
+string operation       # "get_all", "get_param", "set_and_save"
+string param_path      # 参数路径，如 "gripper_id"
+string param_value     # 参数值
+---
+bool success
+string message
+string config_content

@@ -1,0 +1,12 @@
+<!-- bringup.launch 顶层架构 -->
+<launch>
+   <!-- 使用 rosrun 启动 web_video_server 中的 web_video_server -->
+  <node pkg="web_video_server" type="web_video_server" name="web_video_server" output="screen">
+    <param name="port" value="8080" />
+    <param name="address" value="0.0.0.0" />
+    <param name="server_threads" value="1" />
+    <param name="ros_threads" value="4" />
+    <param name="default_stream_type" value="mjpeg" />
+    <param name="publish_rate" value="-1.0" />
+  </node>
+</launch>

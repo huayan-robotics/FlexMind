@@ -1,0 +1,5 @@
+# FollowingType.srv
+int32 type  # 跟随模式 0: servoj, 1: movej
+---
+int32 code  # 状态码
+string message  # 返回消息

@@ -1,0 +1,17 @@
+# Goal definition (客户端发送的目标，例如方向和时间)
+int32 left_position
+int32 left_speed
+int32 left_force
+int32 right_position
+int32 right_speed
+int32 right_force
+
+---
+# Result definition (最终结果)
+int64 code
+string message
+
+---
+# Feedback definition (持续反馈)
+int64 code
+string message
